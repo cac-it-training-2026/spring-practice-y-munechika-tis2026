@@ -12,16 +12,18 @@
 <p>
 <h4>果物情報詳細</h4>
 <table>
-<tr>
-<td>ID</td><td th:text="${'TODO'}"></td>
-</tr>
-<tr>
-<td>名前</td><td th:text="${'TODO'}"></td>
-</tr>
-<tr>
-<td>旬の季節(○月,13:通年) </td><td th:text="${'TODO'}"></td>
-</tr>
-
+	<tr>
+		<td>ID</td>
+		<td th:text="${fruit.fruitId}"></td>
+	</tr>
+	<tr>
+		<td>名前</td>
+		<td th:text="${fruit.fruitName}"></td>
+	</tr>
+	<tr>
+		<td>旬の季節(○月,13:通年)</td>
+		<td th:text="${fruit.seasonMonth}"></td>
+	</tr>
 </table>
 </p>
 <a th:href="@{/fruits/list/sort/id}">一覧に戻る</a>
