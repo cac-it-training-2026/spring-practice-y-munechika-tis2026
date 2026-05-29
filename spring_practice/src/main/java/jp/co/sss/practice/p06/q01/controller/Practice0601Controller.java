@@ -1,5 +1,22 @@
 package jp.co.sss.practice.p06.q01.controller;
 
-public class Practice0601Controller {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import jp.co.sss.practice.p06.repository.FruitsAreaRepository;
+
+@Controller
+public class Practice0601Controller {
+	@Autowired
+	FruitsAreaRepository fruitsAreaRepository;
+
+	@GetMapping("/fruits/area/list/all")
+	public String showAllFruitsAreaList(Model model) {
+		//FruitsAreaリポジトリを利用して全レコードを取得しリクエストスコープに保存
+		model.addAttribute("fruits", fruitsAreaRepository.findAll());
+
+		return "practice06/01/fruits_list";
+	}
 }
